@@ -1,11 +1,16 @@
 # PicoROM
 
+> [!NOTE]
+> This repository is based on the [original by nickbild](https://github.com/nickbild/picoROM) with some improvements by me and added XMODEM support (thanks to [gfoot](https://github.com/gfoot/picoprom)!). Please check out both the projects and give them a star!
+
+**Original description follows:**
+
 PicoROM emulates ROM chips to allow for rapid development of retro computer software.  Rather than remove the ROM IC, burn new contents, and replace the chip for each iteration, PicoROM makes it possible to simply drag-and-drop new code, without even turning the retro computer off.
 
 I'm using it to emulate an Atmel 28C256 32KB EEPROM, but it should be compatible with many other similar chips without modification.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/nickbild/picoROM/main/media/picorom_with_vectron_65_close_sm.jpg">
+<img src="https://raw.githubusercontent.com/nb-programmer/picoROM/main/media/picorom_with_vectron_65_close_sm.jpg">
 </p>
 
 I previously built a similar device, [RapidROM](https://github.com/nickbild/fpga_rom_emulator), with an FPGA.  While this solution works great, I've heard from a lot of people that wanted to modify it to work with different ROM chips, but found it too difficult because of an unfamiliarity with Verilog or FPGAs.  I've also heard from a number of people that wanted to port it to different hardware that they already had—because the TinyFPGA I used is a little bit pricey to buy just for this purpose—but this is generally somewhere between a pain and impossible to do, depending on the hardware.
@@ -22,7 +27,7 @@ Aside from these tricks, the logic is very simple—continually check the addres
 
 Here is PicoROM:
 
-![PicoROM](https://raw.githubusercontent.com/nickbild/picoROM/main/media/picorom_sm.jpg)
+![PicoROM](https://raw.githubusercontent.com/nb-programmer/picoROM/main/media/picorom_sm.jpg)
 
 The Pico really does the work in this circuit.  The rest of it is 74LVC245AN 8-bit logic level shifter chips, to safely interface the 3.3V Pico with my 5V [Vectron 65](https://github.com/nickbild/vectron_65) 6502-based computer.  For the 74LVC245AN attached to the data bus, I connect the chip's output enable pin to the Vectron 65's chip enable signal for the ROM.  That sets the PicoROM data lines to high-Z for free, without taking any processing cycles.
 
@@ -31,13 +36,13 @@ Speaking of processing cycles... I have been using PicoROM with a 2 MHz system c
 ## Media
 
 Running Vectron 65 OS with PicoROM:
-![Vectron 65](https://raw.githubusercontent.com/nickbild/picoROM/main/media/vectron_65_screen_sm.jpg)
+![Vectron 65](https://raw.githubusercontent.com/nb-programmer/picoROM/main/media/vectron_65_screen_sm.jpg)
 
 PicoROM attached to Vectron 65 (and ROM chip removed):
-![Vectron 65 with PicoROM](https://raw.githubusercontent.com/nickbild/picoROM/main/media/picorom_with_vectron_65_sm.jpg)
+![Vectron 65 with PicoROM](https://raw.githubusercontent.com/nb-programmer/picoROM/main/media/picorom_with_vectron_65_sm.jpg)
 
 PicoROM close-up:
-![Vectron 65](https://raw.githubusercontent.com/nickbild/picoROM/main/media/picorom_close_sm.jpg)
+![Vectron 65](https://raw.githubusercontent.com/nb-programmer/picoROM/main/media/picorom_close_sm.jpg)
 
 ## Bill of Materials
 

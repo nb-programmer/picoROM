@@ -1,0 +1,79 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "base-preset",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "hidden": true,
+            "cacheVariables": {
+                "PROJECT_TARGET_NAME": "${presetName}"
+            }
+        },
+        {
+            "name": "pi-pico",
+            "hidden": true,
+            "cacheVariables": {
+                "PICO_BOARD": "pico"
+            },
+            "inherits": [
+                "base-preset"
+            ]
+        },
+        {
+            "name": "pi-pico-w",
+            "hidden": true,
+            "cacheVariables": {
+                "PICO_BOARD": "pico_w"
+            },
+            "inherits": [
+                "base-preset"
+            ]
+        },
+        {
+            "name": "pi-pico-Debug",
+            "displayName": "Raspberry Pi Pico - Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "inherits": [
+                "pi-pico"
+            ]
+        },
+        {
+            "name": "pi-pico-Release",
+            "displayName": "Raspberry Pi Pico - Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "inherits": [
+                "pi-pico"
+            ]
+        },
+        {
+            "name": "pi-pico-w-Debug",
+            "displayName": "Raspberry Pi Pico W - Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "inherits": [
+                "pi-pico-w"
+            ]
+        },
+        {
+            "name": "pi-pico-w-Release",
+            "displayName": "Raspberry Pi Pico W - Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "inherits": [
+                "pi-pico-w"
+            ]
+        }
+    ]
+}
