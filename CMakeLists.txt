@@ -55,7 +55,6 @@ target_compile_definitions(slower_boot2 PRIVATE PICO_FLASH_SPI_CLKDIV=4)
 pico_set_boot_stage2(${PROJECT_NAME} slower_boot2)
 
 # Add some preprocessor defines
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC "$<$<CONFIG:DEBUG>:DEBUG>")
 target_compile_definitions(${CMAKE_PROJECT_NAME}
     PUBLIC PROJECT_TARGET_NAME="${PROJECT_TARGET_NAME}"
 )
