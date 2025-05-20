@@ -37,8 +37,8 @@ void rom_xmodem_xfer_blocking() {
     int sizeReceived = xmodem_receive(buffer, ROM_SIZE, nullptr, nullptr);
 
     if (sizeReceived < 0) {
-        printf("XMODEM transfer failed! Log content:\n");
         xmodem_dumplog();
+        printf("XMODEM transfer failed! See error log above.\n");
     }
 
     if (sizeReceived <= 0) {
