@@ -1,5 +1,6 @@
 #include <pico/stdlib.h>
 
+#include "config.hpp"
 #include "pin_definitions.hpp"
 #include "rom_bus.hpp"
 

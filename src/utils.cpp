@@ -5,7 +5,7 @@
 
 #include "utils.hpp"
 
-#include "pin_definitions.hpp"
+#include "config.hpp"
 #include "rom_bus.hpp"
 
 using rom_bus::rom_contents;

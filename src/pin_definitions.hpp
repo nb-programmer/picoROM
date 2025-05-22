@@ -2,9 +2,11 @@
 
 #include <cstddef>
 
-/* Make sure the size is a power of 2 */
-constexpr size_t ROM_SIZE = 0x100;
+#include "config.hpp"
 
+/**
+ * Pin mask used to quickly discard unused input address bits
+ */
 constexpr size_t ROM_ADDR_MASK = ROM_SIZE - 1;
 
 // Don't change the pin definitions.

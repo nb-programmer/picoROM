@@ -12,10 +12,8 @@
 #include <pico/multicore.h>
 #include <tusb.h>
 
-#include <xmodem/xmodem.h>
-
-#include "utils.hpp"
 #include "rom_bus.hpp"
+#include "utils.hpp"
 
 /**
  * Main entry-point for core1.

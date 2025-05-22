@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "pin_definitions.hpp"
+#include "config.hpp"
 
 namespace rom_bus {
 extern uint8_t rom_contents[ROM_SIZE];

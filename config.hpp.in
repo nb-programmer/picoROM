@@ -1,0 +1,17 @@
+#pragma once
+
+/**
+ * Configuration options for the program.
+ * This file (config.hpp.in) is loaded by CMake to generate config.hpp for
+ * use by the program code.
+ */
+
+#include <cstddef>
+
+constexpr bool is_powerof2(int v) {
+    return v && ((v & (v - 1)) == 0);
+}
+
+constexpr size_t ROM_SIZE = @ROM_SIZE@;
+
+static_assert(is_powerof2(ROM_SIZE), "ROM_SIZE must be a power of 2.");
