@@ -28,8 +28,6 @@ void core1_main() {
     // GPIO setup.
     rom_bus::setup_gpio();
 
-    // TODO: Add an output enable to prevent bus conflicts.
-
     // Continually check address lines and
     // put associated data on bus.
     while (true)

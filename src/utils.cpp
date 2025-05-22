@@ -25,7 +25,6 @@ void setup_rom_contents() {
 }
 
 void rom_xmodem_xfer_blocking() {
-    // TODO: Directly transfer to `rom_content`.
     // Buffer to hold XMODEM rx data
     char buffer[ROM_SIZE];
 
